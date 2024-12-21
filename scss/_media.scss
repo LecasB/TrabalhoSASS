@@ -1,0 +1,77 @@
+@use "mixins" as mixins;
+
+@media (max-width: 319px) {
+  body {
+    overflow-x: scroll;
+  }
+
+  body::before {
+    content: "<320px";
+    color: white;
+    background: black;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 428px) {
+  body {
+    background: lightseagreen;
+  }
+
+  body::before {
+    content: ">=320px & <=428px";
+    color: white;
+    background: black;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+    background: lightcoral;
+  }
+  body::before {
+    content: "<=768px";
+    color: white;
+    background: black;
+  }
+  main .customer-area {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .new-customer .container {
+    align-items: flex-start;
+  }
+
+  h2 {
+    width: 95%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  body {
+    background: #f0f0f0;
+  }
+
+  body::before {
+    content: ">768px";
+    color: white;
+    background: black;
+  }
+
+  @include mixins.pc-display;
+}
+
+@media (min-width: 1281px) {
+  body::before {
+    content: ">=1280px";
+    color: white;
+    background: black;
+  }
+
+  @include mixins.pc-display;
+
+  html body {
+    margin: 10px auto;
+  }
+}

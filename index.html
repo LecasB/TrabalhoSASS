@@ -7,6 +7,7 @@
   </head>
   <body>
     <header>
+      <h1>DDS - Best Customer Area</h1>
       <hr />
     </header>
     <main>
@@ -24,26 +25,25 @@
         <section class="login">
           <h2>Login Form</h2>
 
-          <div class="container">
-            <form class="frm-customer-login">
-              <label for="frm-customer-login-email">E-mail:</label>
-              <input
-                type="email"
-                id="frm-customer-login-email"
-                placeholder="E-mail"
-                name="username"
-                required
-              />
+          <form class="frm-customer-login">
+            <label for="frm-customer-login-email">E-mail:</label>
+            <input
+              type="email"
+              id="frm-customer-login-email"
+              placeholder="E-mail"
+              name="username"
+              required
+            />
 
-              <label for="frm-customer-login-password">Password:</label>
-              <input
-                type="password"
-                id="frm-customer-login-password"
-                placeholder="Password"
-                name="password"
-                required
-              />
-
+            <label for="frm-customer-login-password">Password:</label>
+            <input
+              type="password"
+              id="frm-customer-login-password"
+              placeholder="Password"
+              name="password"
+              required
+            />
+            <div id="check-remember">
               <input
                 type="checkbox"
                 id="frm-customer-login-remember"
@@ -51,13 +51,14 @@
                 name="remember"
               />
               <label for="frm-customer-login-remember">Remember me</label>
+            </div>
 
-              <input type="submit" class="btn large highlight" value="Login" />
-
+            <input type="submit" class="btn large highlight" value="Login" />
+            <div id="reset-forgot">
               <button type="reset" class="btn small">Reset Fields</button>
               <span>Forgot <a href="#">password?</a></span>
-            </form>
-          </div>
+            </div>
+          </form>
         </section>
       </div>
     </main>

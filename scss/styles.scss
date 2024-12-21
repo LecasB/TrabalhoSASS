@@ -1,8 +1,66 @@
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  background: lightseagreen;
-  margin: 0;
-  min-width: 320px;
-  overflow-x: scroll; /* Prevent body overflow by default */
+@use "mixins" as mixins;
+@import "media";
+@import "variables";
+@import "base";
+
+.customer-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-customer,
+.login {
+  @include mixins.flex-center;
+}
+
+.container,
+.frm-customer-login {
+  width: 90%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  background-color: lightgray;
+  border: 1px solid black;
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#frm-customer-login-email,
+#frm-customer-login-password {
+  @include mixins.inputs;
+}
+
+.btn {
+  border: none;
+
+  @each $size, $dimensions in $button-sizes {
+    &.#{$size} {
+      width: map-get($dimensions, width);
+      height: map-get($dimensions, height);
+
+      @if $size == extra-large {
+        @include mixins.flex-center;
+      }
+
+      @if $size == small {
+        margin-top: 13px;
+      }
+    }
+  }
+
+  &.highlight {
+    background-color: $highlight-color;
+    color: white;
+    transition: 0.2s linear;
+  }
+
+  &.highlight:hover {
+    background-color: $highlight-color-hover;
+  }
 }
