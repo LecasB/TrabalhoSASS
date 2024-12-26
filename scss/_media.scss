@@ -69,6 +69,10 @@
     background: black;
   }
 
+  .container {
+    width: 100%;
+  }
+
   @include mixins.pc-display;
 
   html body {
