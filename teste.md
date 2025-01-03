@@ -4,3 +4,4 @@
 - Placeholder num ficheiro aparte
 - Colocar o botão reset com o hover
 - Map Merge
+- Adicionar Comentarios
