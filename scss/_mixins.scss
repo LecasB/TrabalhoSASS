@@ -28,7 +28,7 @@
   }
 
   .customer-area {
-    gap: 30px;
+    gap: 50px;
   }
 }
 
@@ -38,6 +38,8 @@
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
   }
 }
 
@@ -47,4 +49,13 @@
   margin: 0 auto;
   padding: 20px;
   box-sizing: border-box;
+}
+
+@mixin styleh1($color, $size, $centered: false) {
+  color: $color;
+  font-size: $size;
+
+  @if $centered {
+    text-align: center;
+  }
 }

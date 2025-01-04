@@ -1,23 +1,32 @@
 @use "mixins" as mixins;
+@import "variables";
 
 @media (max-width: 319px) {
   body {
     overflow-x: scroll;
-    @include mixins.before("<320px");
+    @include mixins.before("< 320px");
+  }
+
+  h1 {
+    @include mixins.styleh1($color: black, $size: 22px, $centered: true);
   }
 }
 
 @media (min-width: 320px) and (max-width: 428px) {
   body {
     background: lightseagreen;
-    @include mixins.before(">=320px & <=428px");
+    @include mixins.before(">= 320px & <= 428px");
+  }
+
+  h1 {
+    @include mixins.styleh1($color: white, $size: 22px, $centered: true);
   }
 }
 
 @media (min-width: 429px) and (max-width: 768px) {
   body {
     background: lightcoral;
-    @include mixins.before("<=768px");
+    @include mixins.before("<= 768px");
   }
 
   main .customer-area {
@@ -33,26 +42,38 @@
     width: 100%;
     text-align: left;
   }
+
+  h1 {
+    @include mixins.styleh1($color: white, $size: 30px);
+  }
 }
 
 @media (min-width: 769px) and (max-width: 1280px) {
   body {
     background: #f0f0f0;
-    @include mixins.before(">769px");
+    @include mixins.before("> 768px");
   }
 
   @include mixins.pc-display;
+
+  h1 {
+    @include mixins.styleh1($color: $highlight-color-hover, $size: 30px);
+  }
 }
 
 @media (min-width: 1281px) {
   .container {
     width: 100%;
+    align-items: flex-start;
   }
 
   @include mixins.pc-display;
 
+  h1 {
+    @include mixins.styleh1($color: $highlight-color-hover, $size: 30px);
+  }
+
   html body {
-    @include mixins.before(">1280px");
-    margin: 10px auto;
+    @include mixins.before("> 1280px");
   }
 }

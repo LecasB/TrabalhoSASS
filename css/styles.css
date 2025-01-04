@@ -3,10 +3,17 @@
     overflow-x: scroll;
   }
   body::before {
-    content: "<320px";
+    content: "< 320px";
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
+  }
+  h1 {
+    color: black;
+    font-size: 22px;
+    text-align: center;
   }
 }
 @media (min-width: 320px) and (max-width: 428px) {
@@ -14,10 +21,17 @@
     background: lightseagreen;
   }
   body::before {
-    content: ">=320px & <=428px";
+    content: ">= 320px & <= 428px";
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
+  }
+  h1 {
+    color: white;
+    font-size: 22px;
+    text-align: center;
   }
 }
 @media (min-width: 429px) and (max-width: 768px) {
@@ -25,10 +39,12 @@
     background: lightcoral;
   }
   body::before {
-    content: "<=768px";
+    content: "<= 768px";
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
   }
   main .customer-area {
     display: flex;
@@ -41,16 +57,22 @@
     width: 100%;
     text-align: left;
   }
+  h1 {
+    color: white;
+    font-size: 30px;
+  }
 }
 @media (min-width: 769px) and (max-width: 1280px) {
   body {
     background: #f0f0f0;
   }
   body::before {
-    content: ">769px";
+    content: "> 768px";
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
   }
   body main .customer-area {
     flex-direction: row-reverse;
@@ -64,12 +86,17 @@
     display: block;
   }
   .customer-area {
-    gap: 30px;
+    gap: 50px;
+  }
+  h1 {
+    color: #419645;
+    font-size: 30px;
   }
 }
 @media (min-width: 1281px) {
   .container {
     width: 100%;
+    align-items: flex-start;
   }
   body main .customer-area {
     flex-direction: row-reverse;
@@ -83,16 +110,19 @@
     display: block;
   }
   .customer-area {
-    gap: 30px;
+    gap: 50px;
   }
-  html body {
-    margin: 10px auto;
+  h1 {
+    color: #419645;
+    font-size: 30px;
   }
   html body::before {
-    content: ">1280px";
+    content: "> 1280px";
     color: white;
     background: black;
     padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
   }
 }
 body {
@@ -116,24 +146,22 @@ hr {
   border-bottom: 2px solid #333;
 }
 
-h1 {
-  font-size: 22px;
-  color: white;
-}
-
 p {
   margin: 0px 0px 15px 0px;
+}
+
+h1 {
+  margin-top: 0px;
 }
 
 .container {
   width: 100%;
   display: flex;
-  padding: 20px;
+  padding: 25px;
   flex-direction: column;
   background-color: lightgray;
   border: 2px solid #333;
   box-sizing: border-box;
-  display: flex;
 }
 
 .customer-area {
