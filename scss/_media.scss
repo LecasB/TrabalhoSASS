@@ -54,6 +54,11 @@
     @include mixins.before("> 768px");
   }
 
+  .container {
+    width: 100%;
+    align-items: flex-start;
+  }
+
   @include mixins.pc-display;
 
   h1 {

@@ -74,6 +74,10 @@
     margin: 10px 0px 0px 10px;
     display: inline-block;
   }
+  .container {
+    width: 100%;
+    align-items: flex-start;
+  }
   body main .customer-area {
     flex-direction: row-reverse;
     width: 100%;
