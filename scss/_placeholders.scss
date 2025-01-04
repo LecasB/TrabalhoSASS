@@ -8,7 +8,6 @@
   flex-direction: column;
   background-color: lightgray;
   border: 2px solid $dark-grey;
-  gap: 10px;
   box-sizing: border-box;
-  @include mixins.flex-center;
+  display: flex;
 }
