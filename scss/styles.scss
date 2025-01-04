@@ -1,0 +1,64 @@
+@use "mixins" as mixins;
+@import "media";
+@import "variables";
+@import "base";
+@import "placeholders";
+
+.customer-area {
+  display: flex;
+  flex-direction: column;
+}
+// Define o layout principal da área do cliente como uma coluna.
+
+.new-customer,
+.login {
+  @include mixins.flex-center;
+}
+// Centraliza os elementos das secções "new-customer" e "login".
+
+.container {
+  @extend %form-container;
+}
+// Aplica as estilizações definidas no placeholder `%form-container` para o container.
+
+#frm-customer-login-email,
+#frm-customer-login-password {
+  @include mixins.inputs;
+}
+// Aplica estilos padrão aos inputs de e-mail e password.
+
+.btn {
+  border: none;
+  text-decoration: none;
+  transition: 0.2s linear;
+
+  @each $size, $properties in $button-sizes {
+    &.#{$size} {
+      @each $property, $value in $properties {
+        @if $property == flex-center and $value == true {
+          @include mixins.flex-center;
+        } @else {
+          #{$property}: $value;
+        }
+        @if $size == small {
+          &:hover {
+            background-color: nth($greys, 2);
+          }
+        }
+      }
+    }
+  }
+  // Aplica os diferentes tamanhos e propriedades configuradas em `$button-sizes`,
+  // incluindo centralização opcional e estilos específicos ao passar o cursor em botões pequenos.
+
+  &.highlight {
+    background-color: $highlight-color;
+    color: white;
+    transition: 0.2s linear;
+  }
+
+  &.highlight:hover {
+    background-color: $highlight-color-hover;
+  }
+}
+// Define os estilos básicos dos botões, com suporte a tamanhos, transições e variações de destaque.

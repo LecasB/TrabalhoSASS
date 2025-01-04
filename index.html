@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Customer Area</title>
+  </head>
+  <body>
+    <header>
+      <h1>DDS - Best Customer Area</h1>
+      <hr />
+    </header>
+    <main>
+      <div class="customer-area">
+        <section class="new-customer">
+          <h2>New Customer</h2>
+          <div class="container">
+            <p>
+              If you are not yet our customer and want access to exclusive
+              prices.
+            </p>
+            <a class="btn extra-large highlight" href="#">Register Here</a>
+          </div>
+        </section>
+        <section class="login">
+          <h2>Login Form</h2>
+          <div class="container">
+            <form class="frm-customer-login">
+              <label for="frm-customer-login-email">E-mail:</label>
+              <input
+                type="email"
+                id="frm-customer-login-email"
+                placeholder="E-mail"
+                name="username"
+                required
+              />
+
+              <label for="frm-customer-login-password">Password:</label>
+              <input
+                type="password"
+                id="frm-customer-login-password"
+                placeholder="Password"
+                name="password"
+                required
+              />
+              <div id="check-remember">
+                <input
+                  type="checkbox"
+                  id="frm-customer-login-remember"
+                  checked="checked"
+                  name="remember"
+                />
+                <label for="frm-customer-login-remember">Remember me</label>
+              </div>
+
+              <input type="submit" class="btn large highlight" value="Login" />
+              <div id="reset-forgot">
+                <button type="reset" class="btn small">Reset Fields</button>
+                <span>Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

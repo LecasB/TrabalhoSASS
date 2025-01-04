@@ -1,0 +1,57 @@
+$highlight-color: #4caf50;
+// Cor principal de destaque.
+
+$highlight-color-hover: #419645;
+// Cor de destaque ao passar o cursor.
+
+$greys: (#999, #666, #333, lightgray);
+// Paleta de cores cinzas para reutilização.
+
+$text-color: black;
+// Cor principal para o texto.
+$paddings: (
+  vertical-padding: 10px,
+  horizontal-padding: 15px,
+);
+
+// Valores padrão de padding para botões.
+$button-sizes: (
+  small: (
+    padding: #{map-get($paddings, "vertical-padding")} #{map-get(
+        $paddings,
+        "horizontal-padding"
+      )},
+    background-color: nth($greys, 1),
+    color: white,
+    font-size: 12px,
+  ),
+  large: (
+    padding: #{map-get($paddings, "vertical-padding") + 3} #{map-get(
+        $paddings,
+        "horizontal-padding"
+      ) + 20},
+    font-size: 18px,
+    width: 100%,
+    margin: 10px 0px,
+  ),
+);
+
+// Tamanhos padrão para botões (pequeno e grande), incluindo padding, cores e dimensões.
+
+$extra-large: (
+  padding: #{map-get($paddings, "vertical-padding") + 10} #{map-get(
+      $paddings,
+      "horizontal-padding"
+    ) + 20},
+  flex-center: true,
+  font-size: 20px,
+);
+// Definição de botões extra grandes, com padding maior e centralização opcional.
+
+$button-sizes: map-merge(
+  $button-sizes,
+  (
+    extra-large: $extra-large,
+  )
+);
+// Adiciona o tamanho extra-large ao mapa de tamanhos de botões.

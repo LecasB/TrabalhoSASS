@@ -1,0 +1,117 @@
+@use "mixins" as mixins;
+// Importa o ficheiro `mixins` e atribui-lhe o alias `mixins` para utilizar os mixins de forma organizada.
+
+@import "variables";
+// Importa o ficheiro `variables` para aceder a variáveis globais, como `$text-color` e `$highlight-color-hover`.
+
+@media (max-width: 319px) {
+  body {
+    overflow-x: scroll;
+    // Permite o scroll horizontal
+    @include mixins.before("< 320px");
+    // Adiciona algum estilo ou marcação adicional para ecrãs menores que 320px, definido no mixin `before`.
+  }
+
+  h1 {
+    @include mixins.styleh1($color: $text-color, $size: 22px, $centered: true);
+    // Aplica um estilo ao `h1`, incluindo cor (variável `$text-color`), tamanho (22px) e centralização.
+  }
+}
+
+@media (min-width: 320px) and (max-width: 428px) {
+  body {
+    background: lightseagreen;
+    @include mixins.before(">= 320px & <= 428px");
+    // Marca esta faixa de ecrã no mixin `before`.
+
+    header {
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  h1 {
+    @include mixins.styleh1($color: white, $size: 22px, $centered: true);
+    // Ajusta o estilo do `h1` com cor branca, tamanho de 22px e centralizado.
+  }
+
+  .new-customer {
+    .container {
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  body {
+    background: lightcoral;
+    @include mixins.before("<= 768px");
+  }
+
+  main {
+    .customer-area {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
+
+  .new-customer {
+    .container {
+      align-items: flex-start;
+    }
+  }
+
+  h2 {
+    width: 100%;
+    text-align: left;
+  }
+
+  h1 {
+    @include mixins.styleh1($color: white, $size: 30px);
+    // Ajusta o estilo do `h1` com uma cor branca e tamanho maior (30px).
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1280px) {
+  body {
+    background: #f0f0f0;
+    @include mixins.before("> 768px");
+    // Marca o início desta faixa no mixin `before`.
+  }
+
+  .container {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  @include mixins.pc-display;
+  // Aplica estilos adicionais para displays de computador nesta faixa de largura.
+
+  h1 {
+    @include mixins.styleh1($color: $highlight-color-hover, $size: 30px);
+    // Ajusta o estilo do `h1` com uma cor destacada (variável `$highlight-color-hover`) e tamanho de 30px.
+  }
+}
+
+@media (min-width: 1281px) {
+  .container {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  @include mixins.pc-display;
+  // Aplica estilos adicionais para displays de computador em ecrãs maiores.
+
+  h1 {
+    @include mixins.styleh1($color: $highlight-color-hover, $size: 30px);
+    // Mantém o estilo do `h1` com a cor destacada e tamanho de 30px.
+  }
+
+  html {
+    body {
+      @include mixins.before("> 1280px");
+      // Marca o início desta faixa no mixin `before` para ecrãs maiores que 1280px.
+    }
+  }
+}

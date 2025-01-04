@@ -1,0 +1,13 @@
+@use "mixins" as mixins;
+@import "variables";
+
+%form-container {
+  width: 100%;
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+  background-color: nth($greys, 4);
+  border: 2px solid nth($greys, 3);
+  box-sizing: border-box;
+}
+// Estilização base para um container de formulário com layout em coluna e fundo cinza.

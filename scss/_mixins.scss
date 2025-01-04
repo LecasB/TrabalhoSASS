@@ -1,0 +1,70 @@
+@import "variables";
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+// Centraliza os elementos em coluna.
+
+@mixin inputs {
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  border: 2px solid $highlight-color-hover;
+  box-sizing: border-box;
+}
+// Estiliza inputs para ocuparem largura total, com padding e borda verde.
+
+@mixin pc-display {
+  body {
+    main {
+      .customer-area {
+        flex-direction: row-reverse;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        gap: 50px;
+      }
+    }
+  }
+
+  .customer-area .new-customer,
+  .customer-area .login {
+    width: 100%;
+    display: block;
+  }
+}
+// Configura o layout para exibição em dispositivos maiores (PC).
+
+@mixin before($content) {
+  &::before {
+    content: $content;
+    color: white;
+    background: black;
+    padding: 5px;
+    margin: 10px 0px 0px 10px;
+    display: inline-block;
+  }
+}
+// Adiciona um pseudo-elemento antes do elemento com conteúdo dinâmico.
+
+@mixin base-req {
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+// Define limites de largura e centraliza o conteúdo.
+
+@mixin styleh1($color, $size, $centered: false) {
+  color: $color;
+  font-size: $size;
+
+  @if $centered {
+    text-align: center;
+  }
+}
+// Estiliza `h1` com cor, tamanho e opcionalmente centralização.
