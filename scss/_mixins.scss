@@ -6,9 +6,11 @@
 }
 
 @mixin inputs {
-  height: 35px;
-  border: solid 2px #2c7803;
-  padding-left: 15px;
+  width: 100%;
+  margin: 8px 0;
+  padding: 12px 20px;
+  border: 2px solid green;
+  box-sizing: border-box;
 }
 
 @mixin pc-display {
@@ -28,4 +30,21 @@
   .customer-area {
     gap: 30px;
   }
+}
+
+@mixin before($content) {
+  &::before {
+    content: $content;
+    color: white;
+    background: black;
+    padding: 5px;
+  }
+}
+
+@mixin base-req {
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
 }

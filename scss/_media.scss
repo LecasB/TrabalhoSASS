@@ -3,36 +3,23 @@
 @media (max-width: 319px) {
   body {
     overflow-x: scroll;
-  }
-
-  body::before {
-    content: "<320px";
-    color: white;
-    background: black;
+    @include mixins.before("<320px");
   }
 }
 
 @media (min-width: 320px) and (max-width: 428px) {
   body {
     background: lightseagreen;
-  }
-
-  body::before {
-    content: ">=320px & <=428px";
-    color: white;
-    background: black;
+    @include mixins.before(">=320px & <=428px");
   }
 }
 
 @media (min-width: 429px) and (max-width: 768px) {
   body {
     background: lightcoral;
+    @include mixins.before("<=768px");
   }
-  body::before {
-    content: "<=768px";
-    color: white;
-    background: black;
-  }
+
   main .customer-area {
     display: flex;
     flex-direction: column-reverse;
@@ -43,7 +30,7 @@
   }
 
   h2 {
-    width: 95%;
+    width: 100%;
     text-align: left;
   }
 }
@@ -51,24 +38,13 @@
 @media (min-width: 769px) and (max-width: 1280px) {
   body {
     background: #f0f0f0;
-  }
-
-  body::before {
-    content: ">768px";
-    color: white;
-    background: black;
+    @include mixins.before(">769px");
   }
 
   @include mixins.pc-display;
 }
 
 @media (min-width: 1281px) {
-  body::before {
-    content: ">=1280px";
-    color: white;
-    background: black;
-  }
-
   .container {
     width: 100%;
   }
@@ -76,6 +52,7 @@
   @include mixins.pc-display;
 
   html body {
+    @include mixins.before(">1280px");
     margin: 10px auto;
   }
 }

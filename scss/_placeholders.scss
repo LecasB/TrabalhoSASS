@@ -1,0 +1,14 @@
+@use "mixins" as mixins;
+@import "variables";
+
+%form-container {
+  width: 100%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  background-color: lightgray;
+  border: 2px solid $dark-grey;
+  gap: 10px;
+  box-sizing: border-box;
+  @include mixins.flex-center;
+}
